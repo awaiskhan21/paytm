@@ -40,13 +40,11 @@ export async function P2PTransfer(to: string, amount: number) {
       where: { userId: from },
       data: { amount: { decrement: amount } },
     });
-    console.log("3 complete");
 
     await tx.balance.update({
       where: { userId: toUser?.id },
       data: { amount: { increment: amount } },
     });
-    console.log("1 complete");
 
     await tx.p2pTransfer.create({
       data: {
