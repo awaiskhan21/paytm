@@ -34,7 +34,6 @@ export async function P2PTransfer(to: string, amount: number) {
     if (!balance || balance.amount < amount) {
       throw new Error("insufficient balance");
     }
-    console.log("2 complete");
 
     await tx.balance.update({
       where: { userId: from },
