@@ -25,5 +25,3 @@ jobs:
           file: ./docker/Dockerfile.user
           push: true
           tags: awaiskhan21/paytm:latest
-      - name: Verify Pushed Image
-        run: docker pull awaiskhan21/paytm:latest
